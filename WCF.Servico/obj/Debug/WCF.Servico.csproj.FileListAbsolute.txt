@@ -1,0 +1,7 @@
+E:\DEV\Projetos\WCF_Exemplo\WCF_Exemplo\WCF.Servico\bin\Debug\WCF.Servico.dll
+E:\DEV\Projetos\WCF_Exemplo\WCF_Exemplo\WCF.Servico\bin\Debug\WCF.Servico.pdb
+E:\DEV\Projetos\WCF_Exemplo\WCF_Exemplo\WCF.Servico\bin\Debug\WCF.Contrato.dll
+E:\DEV\Projetos\WCF_Exemplo\WCF_Exemplo\WCF.Servico\bin\Debug\WCF.Contrato.pdb
+E:\DEV\Projetos\WCF_Exemplo\WCF_Exemplo\WCF.Servico\obj\Debug\WCF.Servico.csprojResolveAssemblyReference.cache
+E:\DEV\Projetos\WCF_Exemplo\WCF_Exemplo\WCF.Servico\obj\Debug\WCF.Servico.dll
+E:\DEV\Projetos\WCF_Exemplo\WCF_Exemplo\WCF.Servico\obj\Debug\WCF.Servico.pdb

@@ -1,6 +1,5 @@
 E:\DEV\Projetos\WCF_Exemplo\WCF_Exemplo\WCF.Client\bin\Debug\WCF.Client.exe.config
 E:\DEV\Projetos\WCF_Exemplo\WCF_Exemplo\WCF.Client\bin\Debug\WCF.Client.exe
 E:\DEV\Projetos\WCF_Exemplo\WCF_Exemplo\WCF.Client\bin\Debug\WCF.Client.pdb
-E:\DEV\Projetos\WCF_Exemplo\WCF_Exemplo\WCF.Client\obj\Debug\WCF.Client.csprojResolveAssemblyReference.cache
 E:\DEV\Projetos\WCF_Exemplo\WCF_Exemplo\WCF.Client\obj\Debug\WCF.Client.exe
 E:\DEV\Projetos\WCF_Exemplo\WCF_Exemplo\WCF.Client\obj\Debug\WCF.Client.pdb

@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:57294/Exemplo.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:62391/ServicoAutenticacao.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Exemplo.disco" MetadataType="Disco" ID="af82245f-8608-4849-af78-7b27c732bc7b" SourceId="1" SourceUrl="http://localhost:57294/Exemplo.asmx?disco" />
-    <MetadataFile FileName="Exemplo.wsdl" MetadataType="Wsdl" ID="5514c638-4e4b-4294-94e8-aad9b9503df6" SourceId="1" SourceUrl="http://localhost:57294/Exemplo.asmx?wsdl" />
+    <MetadataFile FileName="ServicoAutenticacao.disco" MetadataType="Disco" ID="bbf97bcd-50af-439c-93cf-2d45210a5796" SourceId="1" SourceUrl="http://localhost:62391/ServicoAutenticacao.asmx?disco" />
+    <MetadataFile FileName="ServicoAutenticacao.wsdl" MetadataType="Wsdl" ID="93243882-79a8-45cc-a29e-92bc8764236f" SourceId="1" SourceUrl="http://localhost:62391/ServicoAutenticacao.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -10,11 +10,11 @@ namespace WCF.Client
     {
         static void Main(string[] args)
         {
-            using (Servico.MensagemClient client = new Servico.MensagemClient("BasicHttpBinding_IMensagem"))
-            {
-                Console.Write(client.MensagemBoasVindas());
-                Console.ReadKey();
-            }
+            ServiceWithouWebConfig.ServicoAutenticacaoClient proxySemWebConfig = new ServiceWithouWebConfig.ServicoAutenticacaoClient();
+
+            ServiceWithWebConfig.ServicoAutenticacaoClient proxyComWebConfig = new ServiceWithWebConfig.ServicoAutenticacaoClient();
+
+            
         }
     }
 }

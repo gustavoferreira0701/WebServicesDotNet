@@ -9,60 +9,148 @@
 //------------------------------------------------------------------------------
 
 namespace WCF.Client.ServicoASMX {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Usuario", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Usuario : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LoginField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SenhaField;
+        
+        private bool AtivoField;
+        
+        private bool AdministradorField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Login {
+            get {
+                return this.LoginField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LoginField, value) != true)) {
+                    this.LoginField = value;
+                    this.RaisePropertyChanged("Login");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Senha {
+            get {
+                return this.SenhaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SenhaField, value) != true)) {
+                    this.SenhaField = value;
+                    this.RaisePropertyChanged("Senha");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public bool Ativo {
+            get {
+                return this.AtivoField;
+            }
+            set {
+                if ((this.AtivoField.Equals(value) != true)) {
+                    this.AtivoField = value;
+                    this.RaisePropertyChanged("Ativo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public bool Administrador {
+            get {
+                return this.AdministradorField;
+            }
+            set {
+                if ((this.AdministradorField.Equals(value) != true)) {
+                    this.AdministradorField = value;
+                    this.RaisePropertyChanged("Administrador");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicoASMX.ExemploSoap")]
-    public interface ExemploSoap {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicoASMX.ServicoAutenticacaoSoap")]
+    public interface ServicoAutenticacaoSoap {
         
-        // CODEGEN: Generating message contract since element name HelloWorldResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        WCF.Client.ServicoASMX.HelloWorldResponse HelloWorld(WCF.Client.ServicoASMX.HelloWorldRequest request);
+        // CODEGEN: Generating message contract since element name usuario from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarUsuarios", ReplyAction="*")]
+        WCF.Client.ServicoASMX.ListarUsuariosResponse ListarUsuarios(WCF.Client.ServicoASMX.ListarUsuariosRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<WCF.Client.ServicoASMX.HelloWorldResponse> HelloWorldAsync(WCF.Client.ServicoASMX.HelloWorldRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarUsuarios", ReplyAction="*")]
+        System.Threading.Tasks.Task<WCF.Client.ServicoASMX.ListarUsuariosResponse> ListarUsuariosAsync(WCF.Client.ServicoASMX.ListarUsuariosRequest request);
+        
+        // CODEGEN: Generating message contract since element name login from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AutenticarAcesso", ReplyAction="*")]
+        WCF.Client.ServicoASMX.AutenticarAcessoResponse AutenticarAcesso(WCF.Client.ServicoASMX.AutenticarAcessoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AutenticarAcesso", ReplyAction="*")]
+        System.Threading.Tasks.Task<WCF.Client.ServicoASMX.AutenticarAcessoResponse> AutenticarAcessoAsync(WCF.Client.ServicoASMX.AutenticarAcessoRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldRequest {
+    public partial class ListarUsuariosRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld", Namespace="http://tempuri.org/", Order=0)]
-        public WCF.Client.ServicoASMX.HelloWorldRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListarUsuarios", Namespace="http://tempuri.org/", Order=0)]
+        public WCF.Client.ServicoASMX.ListarUsuariosRequestBody Body;
         
-        public HelloWorldRequest() {
+        public ListarUsuariosRequest() {
         }
         
-        public HelloWorldRequest(WCF.Client.ServicoASMX.HelloWorldRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class HelloWorldRequestBody {
-        
-        public HelloWorldRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorldResponse", Namespace="http://tempuri.org/", Order=0)]
-        public WCF.Client.ServicoASMX.HelloWorldResponseBody Body;
-        
-        public HelloWorldResponse() {
-        }
-        
-        public HelloWorldResponse(WCF.Client.ServicoASMX.HelloWorldResponseBody Body) {
+        public ListarUsuariosRequest(WCF.Client.ServicoASMX.ListarUsuariosRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -71,67 +159,202 @@ namespace WCF.Client.ServicoASMX {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class HelloWorldResponseBody {
+    public partial class ListarUsuariosRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string HelloWorldResult;
+        public WCF.Client.ServicoASMX.Usuario usuario;
         
-        public HelloWorldResponseBody() {
+        public ListarUsuariosRequestBody() {
         }
         
-        public HelloWorldResponseBody(string HelloWorldResult) {
-            this.HelloWorldResult = HelloWorldResult;
+        public ListarUsuariosRequestBody(WCF.Client.ServicoASMX.Usuario usuario) {
+            this.usuario = usuario;
         }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ExemploSoapChannel : WCF.Client.ServicoASMX.ExemploSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ExemploSoapClient : System.ServiceModel.ClientBase<WCF.Client.ServicoASMX.ExemploSoap>, WCF.Client.ServicoASMX.ExemploSoap {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ListarUsuariosResponse {
         
-        public ExemploSoapClient() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListarUsuariosResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WCF.Client.ServicoASMX.ListarUsuariosResponseBody Body;
+        
+        public ListarUsuariosResponse() {
         }
         
-        public ExemploSoapClient(string endpointConfigurationName) : 
+        public ListarUsuariosResponse(WCF.Client.ServicoASMX.ListarUsuariosResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ListarUsuariosResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WCF.Client.ServicoASMX.Usuario[] ListarUsuariosResult;
+        
+        public ListarUsuariosResponseBody() {
+        }
+        
+        public ListarUsuariosResponseBody(WCF.Client.ServicoASMX.Usuario[] ListarUsuariosResult) {
+            this.ListarUsuariosResult = ListarUsuariosResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AutenticarAcessoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AutenticarAcesso", Namespace="http://tempuri.org/", Order=0)]
+        public WCF.Client.ServicoASMX.AutenticarAcessoRequestBody Body;
+        
+        public AutenticarAcessoRequest() {
+        }
+        
+        public AutenticarAcessoRequest(WCF.Client.ServicoASMX.AutenticarAcessoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AutenticarAcessoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string login;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string senha;
+        
+        public AutenticarAcessoRequestBody() {
+        }
+        
+        public AutenticarAcessoRequestBody(string login, string senha) {
+            this.login = login;
+            this.senha = senha;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AutenticarAcessoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AutenticarAcessoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WCF.Client.ServicoASMX.AutenticarAcessoResponseBody Body;
+        
+        public AutenticarAcessoResponse() {
+        }
+        
+        public AutenticarAcessoResponse(WCF.Client.ServicoASMX.AutenticarAcessoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AutenticarAcessoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool AutenticarAcessoResult;
+        
+        public AutenticarAcessoResponseBody() {
+        }
+        
+        public AutenticarAcessoResponseBody(bool AutenticarAcessoResult) {
+            this.AutenticarAcessoResult = AutenticarAcessoResult;
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ServicoAutenticacaoSoapChannel : WCF.Client.ServicoASMX.ServicoAutenticacaoSoap, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ServicoAutenticacaoSoapClient : System.ServiceModel.ClientBase<WCF.Client.ServicoASMX.ServicoAutenticacaoSoap>, WCF.Client.ServicoASMX.ServicoAutenticacaoSoap {
+        
+        public ServicoAutenticacaoSoapClient() {
+        }
+        
+        public ServicoAutenticacaoSoapClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ExemploSoapClient(string endpointConfigurationName, string remoteAddress) : 
+        public ServicoAutenticacaoSoapClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ExemploSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServicoAutenticacaoSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ExemploSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServicoAutenticacaoSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WCF.Client.ServicoASMX.HelloWorldResponse WCF.Client.ServicoASMX.ExemploSoap.HelloWorld(WCF.Client.ServicoASMX.HelloWorldRequest request) {
-            return base.Channel.HelloWorld(request);
+        WCF.Client.ServicoASMX.ListarUsuariosResponse WCF.Client.ServicoASMX.ServicoAutenticacaoSoap.ListarUsuarios(WCF.Client.ServicoASMX.ListarUsuariosRequest request) {
+            return base.Channel.ListarUsuarios(request);
         }
         
-        public string HelloWorld() {
-            WCF.Client.ServicoASMX.HelloWorldRequest inValue = new WCF.Client.ServicoASMX.HelloWorldRequest();
-            inValue.Body = new WCF.Client.ServicoASMX.HelloWorldRequestBody();
-            WCF.Client.ServicoASMX.HelloWorldResponse retVal = ((WCF.Client.ServicoASMX.ExemploSoap)(this)).HelloWorld(inValue);
-            return retVal.Body.HelloWorldResult;
+        public WCF.Client.ServicoASMX.Usuario[] ListarUsuarios(WCF.Client.ServicoASMX.Usuario usuario) {
+            WCF.Client.ServicoASMX.ListarUsuariosRequest inValue = new WCF.Client.ServicoASMX.ListarUsuariosRequest();
+            inValue.Body = new WCF.Client.ServicoASMX.ListarUsuariosRequestBody();
+            inValue.Body.usuario = usuario;
+            WCF.Client.ServicoASMX.ListarUsuariosResponse retVal = ((WCF.Client.ServicoASMX.ServicoAutenticacaoSoap)(this)).ListarUsuarios(inValue);
+            return retVal.Body.ListarUsuariosResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WCF.Client.ServicoASMX.HelloWorldResponse> WCF.Client.ServicoASMX.ExemploSoap.HelloWorldAsync(WCF.Client.ServicoASMX.HelloWorldRequest request) {
-            return base.Channel.HelloWorldAsync(request);
+        System.Threading.Tasks.Task<WCF.Client.ServicoASMX.ListarUsuariosResponse> WCF.Client.ServicoASMX.ServicoAutenticacaoSoap.ListarUsuariosAsync(WCF.Client.ServicoASMX.ListarUsuariosRequest request) {
+            return base.Channel.ListarUsuariosAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WCF.Client.ServicoASMX.HelloWorldResponse> HelloWorldAsync() {
-            WCF.Client.ServicoASMX.HelloWorldRequest inValue = new WCF.Client.ServicoASMX.HelloWorldRequest();
-            inValue.Body = new WCF.Client.ServicoASMX.HelloWorldRequestBody();
-            return ((WCF.Client.ServicoASMX.ExemploSoap)(this)).HelloWorldAsync(inValue);
+        public System.Threading.Tasks.Task<WCF.Client.ServicoASMX.ListarUsuariosResponse> ListarUsuariosAsync(WCF.Client.ServicoASMX.Usuario usuario) {
+            WCF.Client.ServicoASMX.ListarUsuariosRequest inValue = new WCF.Client.ServicoASMX.ListarUsuariosRequest();
+            inValue.Body = new WCF.Client.ServicoASMX.ListarUsuariosRequestBody();
+            inValue.Body.usuario = usuario;
+            return ((WCF.Client.ServicoASMX.ServicoAutenticacaoSoap)(this)).ListarUsuariosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WCF.Client.ServicoASMX.AutenticarAcessoResponse WCF.Client.ServicoASMX.ServicoAutenticacaoSoap.AutenticarAcesso(WCF.Client.ServicoASMX.AutenticarAcessoRequest request) {
+            return base.Channel.AutenticarAcesso(request);
+        }
+        
+        public bool AutenticarAcesso(string login, string senha) {
+            WCF.Client.ServicoASMX.AutenticarAcessoRequest inValue = new WCF.Client.ServicoASMX.AutenticarAcessoRequest();
+            inValue.Body = new WCF.Client.ServicoASMX.AutenticarAcessoRequestBody();
+            inValue.Body.login = login;
+            inValue.Body.senha = senha;
+            WCF.Client.ServicoASMX.AutenticarAcessoResponse retVal = ((WCF.Client.ServicoASMX.ServicoAutenticacaoSoap)(this)).AutenticarAcesso(inValue);
+            return retVal.Body.AutenticarAcessoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WCF.Client.ServicoASMX.AutenticarAcessoResponse> WCF.Client.ServicoASMX.ServicoAutenticacaoSoap.AutenticarAcessoAsync(WCF.Client.ServicoASMX.AutenticarAcessoRequest request) {
+            return base.Channel.AutenticarAcessoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WCF.Client.ServicoASMX.AutenticarAcessoResponse> AutenticarAcessoAsync(string login, string senha) {
+            WCF.Client.ServicoASMX.AutenticarAcessoRequest inValue = new WCF.Client.ServicoASMX.AutenticarAcessoRequest();
+            inValue.Body = new WCF.Client.ServicoASMX.AutenticarAcessoRequestBody();
+            inValue.Body.login = login;
+            inValue.Body.senha = senha;
+            return ((WCF.Client.ServicoASMX.ServicoAutenticacaoSoap)(this)).AutenticarAcessoAsync(inValue);
         }
     }
 }

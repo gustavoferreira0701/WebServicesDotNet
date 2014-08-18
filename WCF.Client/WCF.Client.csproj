@@ -45,7 +45,17 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\Servico\Reference.cs">
+    <Compile Include="Service References\ServiceWithouWebConfig\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceWithWebConfig\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServicoASMX\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -53,34 +63,95 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Service References\Servico\item.xsd">
+    <None Include="Service References\ServiceWithouWebConfig\item.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Servico\item1.xsd">
+    <None Include="Service References\ServiceWithouWebConfig\item1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Servico\Mensagem.wsdl" />
+    <None Include="Service References\ServiceWithouWebConfig\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceWithouWebConfig\ServicoAutenticacao.wsdl" />
+    <None Include="Service References\ServiceWithouWebConfig\WCF.Client.ServiceWithouWebConfig.Usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceWithWebConfig\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceWithWebConfig\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceWithWebConfig\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceWithWebConfig\ServicoAutenticacao.wsdl" />
+    <None Include="Service References\ServiceWithWebConfig\WCF.Client.ServiceWithWebConfig.Usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicoASMX\ServicoAutenticacao.wsdl" />
+    <None Include="Service References\ServicoASMX\WCF.Client.ServicoASMX.AutenticarAcessoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicoASMX\WCF.Client.ServicoASMX.ListarUsuariosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicoASMX\WCF.Client.ServicoASMX.Usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\Servico\" />
+    <WCFMetadataStorage Include="Service References\ServiceWithouWebConfig\" />
+    <WCFMetadataStorage Include="Service References\ServiceWithWebConfig\" />
+    <WCFMetadataStorage Include="Service References\ServicoASMX\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\Servico\item.disco" />
+    <None Include="Service References\ServicoASMX\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\Servico\configuration91.svcinfo" />
+    <None Include="Service References\ServicoASMX\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\Servico\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Servico\Reference.svcmap">
+    <None Include="Service References\ServicoASMX\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceWithWebConfig\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceWithWebConfig\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceWithWebConfig\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceWithWebConfig\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceWithouWebConfig\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceWithouWebConfig\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceWithouWebConfig\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceWithouWebConfig\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicoASMX\ServicoAutenticacao.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

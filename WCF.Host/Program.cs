@@ -5,6 +5,7 @@ using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.Text;
 using System.Threading.Tasks;
+using WCF.Servico;
 
 namespace WCF.Host
 {
@@ -12,17 +13,20 @@ namespace WCF.Host
     {
         static void Main(string[] args)
         {
-            Uri[] listaEnderecos = new Uri[] { new Uri("http://localhost:9092") };
+            Uri[] listaEnderecos = new Uri[] { new Uri("http://localhost:19233") };
 
-            using (ServiceHost host = new ServiceHost(typeof(WCF.Servico.Mensagem), listaEnderecos))
+            using (ServiceHost host = new ServiceHost(typeof(ServicoAutenticacao), listaEnderecos))
             {
-                host.AddServiceEndpoint(typeof(WCF.Contrato.IMensagem), new BasicHttpBinding(), "Mensagem");
-
                 host.Description.Behaviors.Add(new ServiceMetadataBehavior { HttpGetEnabled = true });
 
+                host.AddServiceEndpoint(typeof(WCF.Contrato.IServicoAutenticacao), 
+                                        new BasicHttpBinding(), 
+                                        "ServicoAutenticacao");
+                host.AddServiceEndpoint(typeof(IMetadataExchange), MetadataExchangeBindings.CreateMexHttpBinding(), "mex");
+                
                 host.Open();
 
-                Console.Write("Serviço ativado \nPressione ENTER para desativar");
+                Console.WriteLine("Executando com configurações editadas via código C# \nAperte Enter para interromper o serviço.");
 
                 Console.ReadKey();
             }
